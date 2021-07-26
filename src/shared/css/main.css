@@ -58,6 +58,12 @@ a {
     margin-bottom: 0;
 }
 
+.grid-4x4 {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 /*
 .grid-3x3 {
     display: grid;

@@ -64,10 +64,10 @@ export const MIXER_SLIDER_SCHEME = {
     markers_color: "#999",
     cursor_height: 12,
     cursor_width: 26,
-    cursor_color: "#ffffff",
-    track_color: "#ffffff",
+    cursor_color: "#000000",
+    track_color: "#f1ffa4",
     // cursor_color: "#f8f812",
     // track_color: "#f8f812",
-    track_bg_color: "#333",
+    track_bg_color: "#ffffff",
     format: v => MODEL.control[MODEL.control_id.exp_pedal].human(v)
 };

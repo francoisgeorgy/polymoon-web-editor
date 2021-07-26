@@ -11,7 +11,7 @@ html {
     --messages-color: #424242;
     --messages-border: #999;
 
-    --value: #f9d000;
+    --value: #ffffff;
     --dialog-link: #fff;
     --dialog-bg-color: rgba(0, 0, 0, 0.80);
     --dialog-small-button-color: #333;
@@ -75,7 +75,7 @@ html {
     --progress-bar-border: 1px solid black;
     --progress-bar-bg-color: #f1d09c;
 
-    --config-bg-color: #eeeea1;
+    /*--config-bg-color: #eeeea1;*/
 
     --read-preset-progress-color: #000000;
     --read-preset-progress-bg1: #eeeea1;
@@ -108,10 +108,10 @@ a {
 }
 
 .mg-row-border-top {
-    border-top: 1px solid #f1d09c;
+    border-top: 1px solid #eeeeee;
 }
 .mg-row-border-bottom {
-    border-bottom: 1px solid #bc9b65;
+    border-bottom: 1px solid #aaaaaa;
 }
 
 /*noinspection CssUnusedSymbol*/
@@ -124,5 +124,5 @@ a {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 125%;
-    color: #fff;
+    color: #000;
 }
