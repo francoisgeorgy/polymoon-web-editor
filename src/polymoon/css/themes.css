@@ -1,0 +1,128 @@
+html {
+
+    --neon: #424242;
+
+    --body-bg-color: #111111;
+
+    --tooltip-bg-color: lightgoldenrodyellow;
+
+
+    --messages-bg: #ffffff70;
+    --messages-color: #424242;
+    --messages-border: #999;
+
+    --value: #f9d000;
+    --dialog-link: #fff;
+    --dialog-bg-color: rgba(0, 0, 0, 0.80);
+    --dialog-small-button-color: #333;
+    --panel-link: blue;
+
+    --knob-back-border: #999;
+    --knob-value: #ddd;
+
+    --body-bg-from: #202023;
+    --body-bg-to: #3E3E46;
+
+    --title-text: #000;
+    --header-text: #000;
+    --header-shortcut-text: #666;
+
+    --menu-icon: #333;
+    --menu-text: #333;
+    --menu-text-hover: #000;
+
+    --menu-link: #761ec6;
+
+    --preset-icon: #61410c;
+
+    --bt-color: #333;
+    --bt-border: #333;
+    /*--bt-bg-color: rgba(255, 251, 177, 0.25);*/
+    --bt-bg-color: rgba(200, 200, 200, 0.25);
+    --bt-hover-color: #000;
+    --bt-hover-bg-color: #eafc71;
+    --bt-on-color: #000;
+    /*--bt-on-bg-color: yellow;*/
+    --bt-on-bg-color: #f1ffa4;
+    /*--bt-on-border: #f9d000;*/
+    --bt-on-border: #444444;
+
+    --sw-color: #706c58;
+    --sw-on-color: yellow;
+    --sw-on-shadow-color: #1d1d01;
+
+    --inset-shadow-color: #000000;
+
+    --select-color: #f9d000;
+    --select-bg: #eaeaea;
+    --select-border: #000;
+
+    --on-color: #000;
+    --midi-on: yellow;
+    --paused: #706c58;
+    --running: red;
+
+    --option-panel-header-color: #333;
+    --option-panel-header-border: #333;
+    --global-setting-enabled-color: blue;
+
+    --preset-sel-bg-color: #ff00001A;
+    --preset-descr-bg-color: lightgoldenrodyellow;
+    /*--preset-selector-bg-color: rgba(255, 251, 177, 0.25);*/
+    --preset-selector-bg-color: rgba(200, 200, 200, 0.25);
+    --preset-editor-over-bg-color: white;
+
+    --progress-bar-border: 1px solid black;
+    --progress-bar-bg-color: #f1d09c;
+
+    --config-bg-color: #eeeea1;
+
+    --read-preset-progress-color: #000000;
+    --read-preset-progress-bg1: #eeeea1;
+    --read-preset-progress-bg2: #111111;
+}
+
+a {
+    color: var(--menu-link);
+}
+
+.glow {
+    /*color: #ddf6ff!important;*/
+    color: yellow!important;
+    /*color: #f9d000!important;*/
+    text-shadow: 0 0 12px lightyellow;
+    /*text-shadow: 0 0 8px #798c0e;*/
+}
+
+#main-grid {
+    /*background-color: lightgoldenrodyellow;*/
+    background-color: #ffffff;
+    background-image: url("img/bg-logo-opacity5.png"), linear-gradient(to right, #aaaaaa, #ffffff 1%, #ffffff 99%, #aaaaaa);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#main-grid > div {
+    background: transparent;
+}
+
+.mg-row-border-top {
+    border-top: 1px solid #f1d09c;
+}
+.mg-row-border-bottom {
+    border-bottom: 1px solid #bc9b65;
+}
+
+/*noinspection CssUnusedSymbol*/
+.knob-bg {
+    fill: url("#grad2");
+    stroke: #000;
+}
+
+.slider-value {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 125%;
+    color: #fff;
+}
