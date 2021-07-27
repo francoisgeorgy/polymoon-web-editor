@@ -47,11 +47,11 @@ html {
     /*--bt-on-border: #f9d000;*/
     --bt-on-border: #444444;
 
-    --sw-color: #706c58;
+    --sw-color: #a7a7a7;
     --sw-on-color: yellow;
     --sw-on-shadow-color: #1d1d01;
 
-    --inset-shadow-color: #000000;
+    --inset-shadow-color: #333333;
 
     --select-color: #f9d000;
     --select-bg: #eaeaea;
