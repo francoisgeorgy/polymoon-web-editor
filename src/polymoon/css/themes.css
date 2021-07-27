@@ -40,7 +40,8 @@ html {
     /*--bt-bg-color: rgba(255, 251, 177, 0.25);*/
     --bt-bg-color: rgba(200, 200, 200, 0.25);
     --bt-hover-color: #000;
-    --bt-hover-bg-color: #eafc71;
+    /*--bt-hover-bg-color: #eafc71;*/
+    --bt-hover-bg-color: #ffffff;
     --bt-on-color: #000;
     /*--bt-on-bg-color: yellow;*/
     --bt-on-bg-color: #f1ffa4;
@@ -97,7 +98,7 @@ a {
 #main-grid {
     /*background-color: lightgoldenrodyellow;*/
     background-color: #ffffff;
-    background-image: url("img/bg-logo-opacity5.png"), linear-gradient(to right, #aaaaaa, #ffffff 1%, #ffffff 99%, #aaaaaa);
+    background-image: url("img/bg-logo-opacity5.png"), linear-gradient(to right, #aaaaaa, #fafafa 1%, #fafafa 99%, #aaaaaa);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

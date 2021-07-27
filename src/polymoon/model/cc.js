@@ -2,22 +2,22 @@ import {_0_100, _2_steps, _4_steps, _off_when_zero_percent, _percent, _ms, _temp
 
 export const control_id = {
     exp_pedal: 4,
-    dotted_8th: 9,       // ALT / 2nd layer
-    bypass: 14,             // RIGHT footswitch
+    dotted_8th: 9,
+    bypass: 14,
     tempo: 15,
-    time: 16,
-    feedback: 17,
-    mix: 18,
-    multiply: 19,
-    dimension: 20,
-    dynamics: 21,
-    early_mod: 22,         // ALT / 2nd layer
-    feedback_filter: 23,        // ALT / 2nd layer
+    time: 16,               // ALT / 2nd layer
+    feedback: 17,           // ALT / 2nd layer
+    mix: 18,                // ALT / 2nd layer
+    multiply: 19,           // ALT / 2nd layer
+    dimension: 20,          // ALT / 2nd layer
+    dynamics: 21,           // ALT / 2nd layer
+    early_mod: 22,          // ALT / 2nd layer
+    feedback_filter: 23,    // ALT / 2nd layer
     delay_level: 24,        // ALT / 2nd layer
-    late_mod: 25,    // ALT / 2nd layer
-    flanger_mode: 26,   // ALT / 2nd layer
-    flanger_speed: 27,     // ALT / 2nd layer
-    tap: 28,                // LEFT footswitch
+    late_mod: 25,           // ALT / 2nd layer
+    flanger_mode: 26,       // ALT / 2nd layer
+    flanger_speed: 27,      // ALT / 2nd layer
+    tap: 28,
     phaser_mode: 29,
     flanger_fb: 30,
     half_speed: 31
@@ -31,7 +31,6 @@ const _delay_level = function (v) {
         return g === 0 ? (g + 'dB') : ('-' + g + 'dB');
     }
 };
-
 
 const _flanger_mode = function (v) {
     if (v < 33) {
@@ -411,13 +410,10 @@ export function defineControls() {
     control[control_id.half_speed] = { // 31
         name: "Half speed",
         init_value: 0,
-        // human: _waveshape,
-        //TODO: human
-        //TODO: map_raw
-        sysex: {
-            offset: 24,
-            mask: [0x7F]
-        },
+        // sysex: {
+        //     offset: 25,
+        //     mask: [0x7F]
+        // },
         infos: ""
     };
 

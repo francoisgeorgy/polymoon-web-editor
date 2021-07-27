@@ -3,6 +3,39 @@ import {updateControl} from "@shared/controller";
 import {TRACE} from "@shared/utils/debug";
 import {setupFootswitches} from "./footswitches";
 import {_tempo_bpm, _tempo_ms} from "@model";
+import {expHeel, expToe, inExpMode, showExpValues} from "../shared/expController";
+import {updateDevice} from "../shared/midi/midiOut";
+import {log} from "../shared/utils/debug";
+
+function halfSpeedActive() {
+    return $("#toggle-half-speed").is(".on");
+}
+
+function dotted8thActive() {
+    return $("#toggle-dotted-8th").is(".on");
+}
+
+function toggleHalfSpeed() {
+    // log("toggleHalfSpeed", MODEL.control_id.half_speed);
+    if (halfSpeedActive()) {
+        updateDevice("cc", MODEL.control_id.half_speed, 0);
+        $("#toggle-half-speed").removeClass("on");
+    } else {
+        updateDevice("cc", MODEL.control_id.half_speed, 127);
+        $("#toggle-half-speed").addClass("on");
+    }
+}
+
+function toggleDotted8th() {
+    // log("toggleDotted8th", MODEL.control_id.half_speed);
+    if (dotted8thActive()) {
+        updateDevice("cc", MODEL.control_id.dotted_8th, 0);
+        $("#toggle-dotted-8th").removeClass("on");
+    } else {
+        updateDevice("cc", MODEL.control_id.dotted_8th, 127);
+        $("#toggle-dotted-8th").addClass("on");
+    }
+}
 
 export function customSetup() {
 
@@ -21,6 +54,9 @@ export function customSetup() {
         }
         updateControl(c.cc_type, MODEL.control_id.tempo, MODEL.getControlValue(c), MODEL.getMappedControlValue(c));
     });
+
+    $('#toggle-half-speed').click(toggleHalfSpeed);
+    $('#toggle-dotted-8th').click(toggleDotted8th);
 
     if (TRACE) console.groupEnd();
 }

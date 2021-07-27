@@ -23,59 +23,41 @@ export const WAVESHAPES = {
 export function getDataForPreset() {
 
     const data = new Uint8Array(29);
-
     let i = 0;
 
-    // if (complete) {
-    //     data[i++] = SYSEX_START_BYTE;                               // 0
-    //     data[i++] = 0x00;
-    //     data[i++] = 0x20;
-    //     data[i++] = 0x10;
-    // }
-    //
-    // data[i++] = 0;    // We set device ID to 0 in order to get a sysex dump that can be sent to any Polymoon.
-    // data[i++] = meta.group_id.value;
-    // data[i++] = meta.model_id.value;
-    //
-    // data[i++] = 0x26; // Polymoon always sent this value when sending a sysex.
-    //
-    // data[i++] = meta.preset_id.value;                               // 8
-
-    data[i++] = control[control_id.pitch].raw_value;                // 9
-    data[i++] = control[control_id.filter].raw_value;
+    // Toe Up values
+    data[i++] = control[control_id.time].raw_value;
+    data[i++] = control[control_id.feedback].raw_value;
     data[i++] = control[control_id.mix].raw_value;
-    data[i++] = control[control_id.sustain].raw_value;
-    data[i++] = control[control_id.filter_envelope].raw_value;
-    data[i++] = control[control_id.modulation].raw_value;
-    data[i++] = control[control_id.portamento].raw_value;
-    data[i++] = control[control_id.filter_type].raw_value;
+    data[i++] = control[control_id.multiply].raw_value;
+    data[i++] = control[control_id.dimension].raw_value;
+    data[i++] = control[control_id.dynamics].raw_value;
+    data[i++] = control[control_id.early_mod].raw_value;
+    data[i++] = control[control_id.feedback_filter].raw_value;
     data[i++] = control[control_id.delay_level].raw_value;
-    data[i++] = control[control_id.ring_modulation].raw_value;
-    data[i++] = control[control_id.filter_bandwidth].raw_value;
-    data[i++] = control[control_id.delay_feedback].raw_value;
-    data[i++] = control[control_id.bypass].raw_value;
-    data[i++] = control[control_id.envelope_type].raw_value;
-    data[i++] = control[control_id.synth_mode].raw_value;
-    data[i++] = control[control_id.synth_waveshape].raw_value;
-    data[i++] = control[control_id.tempo].raw_value;
+    data[i++] = control[control_id.late_mod].raw_value;
+    data[i++] = control[control_id.flanger_mode].raw_value;
+    data[i++] = control[control_id.flanger_speed].raw_value;
 
-    // values 2 (EXP)
-    data[i++] = control[control_id.pitch].raw_value2;               // 26
-    data[i++] = control[control_id.filter].raw_value2;
-    data[i++] = control[control_id.mix].raw_value2;
-    data[i++] = control[control_id.sustain].raw_value2;
-    data[i++] = control[control_id.filter_envelope].raw_value2;
-    data[i++] = control[control_id.modulation].raw_value2;
-    data[i++] = control[control_id.portamento].raw_value2;
-    data[i++] = control[control_id.filter_type].raw_value2;
-    data[i++] = control[control_id.delay_level].raw_value2;
-    data[i++] = control[control_id.ring_modulation].raw_value2;
-    data[i++] = control[control_id.filter_bandwidth].raw_value2;
-    data[i++] = control[control_id.delay_feedback].raw_value2;      // 37
+    // Non exp values
+    data[i++] = control[control_id.tap].raw_value;
+    data[i++] = control[control_id.phaser_mode].raw_value;
+    data[i++] = control[control_id.flanger_fb].raw_value;
+    data[i++] = control[control_id.half_speed].raw_value;
 
-    // if (complete) data[i] = SYSEX_END_BYTE;                         // 38
-
-    // log(data, meta.preset_id.value);
+    // // Toe Down values
+    data[i++] = control[control_id.time].raw_value;
+    data[i++] = control[control_id.feedback].raw_value;
+    data[i++] = control[control_id.mix].raw_value;
+    data[i++] = control[control_id.multiply].raw_value;
+    data[i++] = control[control_id.dimension].raw_value;
+    data[i++] = control[control_id.dynamics].raw_value;
+    data[i++] = control[control_id.early_mod].raw_value;
+    data[i++] = control[control_id.feedback_filter].raw_value;
+    data[i++] = control[control_id.delay_level].raw_value;
+    data[i++] = control[control_id.late_mod].raw_value;
+    data[i++] = control[control_id.flanger_mode].raw_value;
+    data[i++] = control[control_id.flanger_speed].raw_value;
 
     return data;
 }
