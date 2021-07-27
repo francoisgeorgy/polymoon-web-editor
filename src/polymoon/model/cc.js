@@ -1,4 +1,4 @@
-import {_0_100, _2_steps, _4_steps, _off_when_zero_percent, _percent, _tempo_ms, control} from "@model";
+import {_0_100, _2_steps, _4_steps, _off_when_zero_percent, _percent, _ms, _tempo_ms, control} from "@model";
 
 export const control_id = {
     exp_pedal: 4,
@@ -23,11 +23,34 @@ export const control_id = {
     half_speed: 31
 };
 
-const _dotted_8th = function (v) {
-    if (v < 64) {
-        return "1/4";
+const _delay_level = function (v) {
+    if (v === 0) {
+        return "auto";
     } else {
-        return "dot 8th";
+        let g = (12 - Math.round(v/127 * 12));
+        return g === 0 ? (g + 'dB') : ('-' + g + 'dB');
+    }
+};
+
+
+const _flanger_mode = function (v) {
+    if (v < 33) {
+        return "Env Down";
+    } else if (v < 89) {
+        return "Env Up";
+    } else {
+        return "LFO";
+    }
+};
+
+// 0..127 value to predefined value
+export const _map_flanger_mode = function (v) {
+    if (v < 32) {
+        return 0;
+    } else if (v < 127) {
+        return 33;
+    } else {
+        return 127;
     }
 };
 
@@ -43,13 +66,11 @@ const _phaser_mode = function (v) {
     }
 };
 
-const _flanger_mode = function (v) {
-    if (v < 33) {
-        return "Env Down";
-    } else if (v < 89) {
-        return "Env Up";
+const _dotted_8th = function (v) {
+    if (v < 64) {
+        return "1/4";
     } else {
-        return "LFO";
+        return "dot 8th";
     }
 };
 
@@ -105,6 +126,45 @@ const _modulations = function (v) {
     }
 };
 
+// 0..127 value to predefined value
+const _map_modulations = function (v) {
+    if (v <= 0x07) {                    // 1
+        return 0;
+    } else if (v <= 0x0f) {             // 2
+        return 8;
+    } else if (v <= 0x17) {             // 3
+        return 16;
+    } else if (v <= 0x1f) {             // 4
+        return 24;
+    } else if (v <= 0x27) {             // 5
+        return 32;
+    } else if (v <= 0x2f) {             // 6
+        return 40;
+    } else if (v <= 0x37) {             // 7
+        return 48;
+    } else if (v <= 0x3f) {             // 8
+        return 56;
+    } else if (v <= 0x47) {             // 9
+        return 64;
+    } else if (v <= 0x4f) {             // 10
+        return 72;
+    } else if (v <= 0x57) {             // 11
+        return 80;
+    } else if (v <= 0x5f) {             // 12
+        return 88;
+    } else if (v <= 0x67) {             // 13
+        return 96;
+    } else if (v <= 0x6f) {             // 14
+        return 104;
+    } else if (v <= 0x77) {             // 15
+        return 112;
+    } else {                            // 16
+        return 120;
+    }
+};
+
+// Init correspond to Fatory preset #1
+
 export function defineControls() {
 
     control[control_id.exp_pedal] = { // 4,
@@ -116,6 +176,7 @@ export function defineControls() {
         name: "Dotted 8th",
         human: _dotted_8th,
         // map_raw: _2_steps,   //TODO: map_raw
+        init_value: 0,
         sysex: {
             offset: 22,
             mask: [0x7F]
@@ -136,6 +197,7 @@ export function defineControls() {
     control[control_id.tempo] = { // 15,
         name: "Tempo",
         human: _tempo_ms,
+        init_value: 76,
         sysex: {
             offset: 25,
             mask: [0x7F]
@@ -144,7 +206,8 @@ export function defineControls() {
     };
     control[control_id.time] = { // 16,
         name: "Time",
-        init_value: 63,
+        human: _ms,
+        init_value: 76,
         cc_center: [63, 64],
         sysex: {
             offset: 9,
@@ -158,7 +221,7 @@ export function defineControls() {
     };
     control[control_id.feedback] = { // 17,
         name: "Feedback",
-        init_value: 127,
+        init_value: 101,
         human: _percent,
         sysex: {
             offset: 10,
@@ -172,7 +235,7 @@ export function defineControls() {
     };
     control[control_id.mix] = { // 18,
         name: "Mix",
-        init_value: 127,
+        init_value: 93,
         human: _percent,
         sysex: {
             offset: 11,
@@ -187,6 +250,7 @@ export function defineControls() {
     control[control_id.multiply] = { // 19,
         name: "Multiply",
         human: _multiply,       //TODO: map_raw
+        init_value: 0,
         sysex: {
             offset: 12,
             mask: [0x7F]
@@ -199,6 +263,7 @@ export function defineControls() {
     };
     control[control_id.dimension] = { // 20,
         name: "Dimension",
+        init_value: 0,
         sysex: {
             offset: 13,
             mask: [0x7F]
@@ -212,6 +277,7 @@ export function defineControls() {
     control[control_id.dynamics] = { // 21,
         name: "Dynamics",
         human: _off_when_zero_percent,
+        init_value: 0,
         sysex: {
             offset: 14,
             mask: [0x7F]
@@ -225,7 +291,8 @@ export function defineControls() {
     control[control_id.early_mod] = { // 22,
         name: "Early modulations",
         human: _modulations,
-        //TODO: map_raw
+        init_value: 5,
+        map_raw: _map_modulations,
         sysex: {
             offset: 15,
             mask: [0x7F]
@@ -238,8 +305,9 @@ export function defineControls() {
     };
     control[control_id.feedback_filter] = { // 23,
         name: "Feedback filter",
-        human: _modulations,
+        human: _percent,
         //TODO: map_raw
+        init_value: 63,
         sysex: {
             offset: 16,
             mask: [0x7F]
@@ -252,8 +320,9 @@ export function defineControls() {
     };
     control[control_id.delay_level] = { // 24,
         name: "Delay level",
-        human: _percent,
+        human: _delay_level,
         //TODO: auto-scaling when 0
+        init_value: 0,
         sysex: {
             offset: 17,
             mask: [0x7F]
@@ -267,7 +336,8 @@ export function defineControls() {
     control[control_id.late_mod] = { //  25,
         name: "Late modulations",
         human: _modulations,
-        //TODO: map_raw
+        map_raw: _map_modulations,
+        init_value: 4,
         sysex: {
             offset: 18,
             mask: [0x7F]
@@ -281,7 +351,8 @@ export function defineControls() {
     control[control_id.flanger_mode] = { // 26,
         name: "Flanger mode",
         human: _flanger_mode,
-        //TODO: map_raw
+        map_raw: _map_flanger_mode,
+        init_value: 0,
         sysex: {
             offset: 19,
             mask: [0x7F]
@@ -294,6 +365,7 @@ export function defineControls() {
     };
     control[control_id.flanger_speed] = { // 27,
         name: "Flanger speed",
+        init_value: 63,
         sysex: {
             offset: 20,
             mask: [0x7F]
@@ -318,9 +390,9 @@ export function defineControls() {
     };
     control[control_id.phaser_mode] = { // 29,
         name: "Phaser mode",
-        init_value: 63,
         human: _phaser_mode,
-        //TODO: map_raw
+        map_raw: _4_steps,
+        init_value: 0,
         sysex: {
             offset: 23,
             mask: [0x7F]

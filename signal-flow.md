@@ -69,7 +69,7 @@ Layout
 
     Time            Multiply            Feedback        Feedback filter     Dimension       Delay level     
     Early mod                                           Late mod                            Mix                                
-    Flanger mode    Flanger speed       Fl. mode & fback                                    Bypass
+    Flanger depth   Flanger speed       Fl. mode & fback                                    Bypass
 
 
 

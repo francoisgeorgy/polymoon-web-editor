@@ -8,7 +8,6 @@ import {displayRawValues} from "@shared/knobs";
 import {expHeel, expToe, showExpValues, toggleExpEditMode} from "@shared/expController";
 import {toggleLibrary, toggleScroll} from "@shared/preset_library";
 import {updateControl, updateModelAndUI} from "@shared/controller";
-import {SYNTH_MODES, WAVESHAPES} from "@device/model/sysex";
 import {kb_enabled} from "@shared/keyboardSupport";
 import {tapDown, tapRelease} from "@device/footswitches";
 
@@ -19,41 +18,41 @@ function toggleBypass() {
     updateBypassSwitch(v);
 }
 
-function selectSquarewave() {
-    const c = MODEL.control[MODEL.control_id.synth_waveshape];
-    updateDevice(c.cc_type, c.cc_number, WAVESHAPES.square);
-    updateControl(c.cc_type, c.cc_number, WAVESHAPES.square);
-}
-
-function selectSawtooth() {
-    const c = MODEL.control[MODEL.control_id.synth_waveshape];
-    updateDevice(c.cc_type, c.cc_number, WAVESHAPES.sawtooth);
-    updateControl(c.cc_type, c.cc_number, WAVESHAPES.sawtooth);
-}
-
-function selectDry() {
-    const c = MODEL.control[MODEL.control_id.synth_mode];
-    updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.dry);
-    updateControl(c.cc_type, c.cc_number, SYNTH_MODES.dry);
-}
-
-function selectMono() {
-    const c = MODEL.control[MODEL.control_id.synth_mode];
-    updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.mono);
-    updateControl(c.cc_type, c.cc_number, SYNTH_MODES.mono);
-}
-
-function selectPoly() {
-    const c = MODEL.control[MODEL.control_id.synth_mode];
-    updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.poly);
-    updateControl(c.cc_type, c.cc_number, SYNTH_MODES.poly);
-}
-
-function selectArp() {
-    const c = MODEL.control[MODEL.control_id.synth_mode];
-    updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.arp);
-    updateControl(c.cc_type, c.cc_number, SYNTH_MODES.arp);
-}
+// function selectSquarewave() {
+//     const c = MODEL.control[MODEL.control_id.synth_waveshape];
+//     updateDevice(c.cc_type, c.cc_number, WAVESHAPES.square);
+//     updateControl(c.cc_type, c.cc_number, WAVESHAPES.square);
+// }
+//
+// function selectSawtooth() {
+//     const c = MODEL.control[MODEL.control_id.synth_waveshape];
+//     updateDevice(c.cc_type, c.cc_number, WAVESHAPES.sawtooth);
+//     updateControl(c.cc_type, c.cc_number, WAVESHAPES.sawtooth);
+// }
+//
+// function selectDry() {
+//     const c = MODEL.control[MODEL.control_id.synth_mode];
+//     updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.dry);
+//     updateControl(c.cc_type, c.cc_number, SYNTH_MODES.dry);
+// }
+//
+// function selectMono() {
+//     const c = MODEL.control[MODEL.control_id.synth_mode];
+//     updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.mono);
+//     updateControl(c.cc_type, c.cc_number, SYNTH_MODES.mono);
+// }
+//
+// function selectPoly() {
+//     const c = MODEL.control[MODEL.control_id.synth_mode];
+//     updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.poly);
+//     updateControl(c.cc_type, c.cc_number, SYNTH_MODES.poly);
+// }
+//
+// function selectArp() {
+//     const c = MODEL.control[MODEL.control_id.synth_mode];
+//     updateDevice(c.cc_type, c.cc_number, SYNTH_MODES.arp);
+//     updateControl(c.cc_type, c.cc_number, SYNTH_MODES.arp);
+// }
 
 function setExpMin() {
     const c = MODEL.control[MODEL.control_id.exp_pedal];
@@ -125,7 +124,7 @@ export function keyDown(code, alt, shift, meta, ctrl) {
 
     switch (code) {
         case 9:                 // TAB
-            log("TAB");
+            // log("TAB");
             toggleExpEditMode();
             break;
         case 16:                // Shift
@@ -140,34 +139,32 @@ export function keyDown(code, alt, shift, meta, ctrl) {
 
     //FIXME: map to key's position, not key's value (in order to be isolated from the keyboard layout)
 
-    const portamento = MODEL.getControlValue(MODEL.getControl(MODEL.control_id.portamento));
-
     if (!alt && !shift && !meta) {
         switch (code) {
             case 82:                // R Randomize
                 randomize();
                 break;
-            case 77:                // M Mono
-                selectMono();
-                break;
-            case 80:                // P Poly
-                selectPoly();
-                break;
-            case 65:                // A ARP
-                selectArp();
-                break;
-            case 68:                // D Dry
-                selectDry();
-                break;
+            // case 77:                // M Mono
+            //     selectMono();
+            //     break;
+            // case 80:                // P Poly
+            //     selectPoly();
+            //     break;
+            // case 65:                // A ARP
+            //     selectArp();
+            //     break;
+            // case 68:                // D Dry
+            //     selectDry();
+            //     break;
             case 73:                // I Init
                 init();
                 break;
-            case 81:                // Q Squarewave
-                selectSquarewave();
-                break;
-            case 87:                // W Sawtooth wave
-                selectSawtooth();
-                break;
+            // case 81:                // Q Squarewave
+            //     selectSquarewave();
+            //     break;
+            // case 87:                // W Sawtooth wave
+            //     selectSawtooth();
+            //     break;
             case 33:                // PageUp
                 setExpMax();
                 break;
@@ -192,12 +189,12 @@ export function keyDown(code, alt, shift, meta, ctrl) {
             case 32:                // SPACE
                 toggleBypass();
                 break;
-            case 83:                // S    toggle sustain
-                // animateTo(MODEL.control_id.sustain, ctrl ? 0 : 127);
-                let v = MODEL.getControlValue(MODEL.getControl(MODEL.control_id.sustain)) ? 0 : 127;
-                updateModelAndUI("cc", MODEL.control_id.sustain, v);
-                updateDevice("cc", MODEL.control_id.sustain, v);
-                break;
+            // case 83:                // S    toggle sustain
+            //     // animateTo(MODEL.control_id.sustain, ctrl ? 0 : 127);
+            //     let v = MODEL.getControlValue(MODEL.getControl(MODEL.control_id.sustain)) ? 0 : 127;
+            //     updateModelAndUI("cc", MODEL.control_id.sustain, v);
+            //     updateDevice("cc", MODEL.control_id.sustain, v);
+            //     break;
             case 75:                // K
                 toggleScroll();
                 break;

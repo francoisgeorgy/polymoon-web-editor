@@ -58,9 +58,9 @@ html {
     --select-border: #000;
 
     --on-color: #000;
-    --midi-on: yellow;
-    --paused: #706c58;
-    --running: red;
+    --midi-on: red;
+    /*--paused: #706c58;*/
+    /*--running: red;*/
 
     --option-panel-header-color: #333;
     --option-panel-header-border: #333;

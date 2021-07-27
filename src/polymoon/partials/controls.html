@@ -4,7 +4,7 @@
     -->
     <div id="time" class="grid-default mg-row-border-top controls-row">
         <div class="header exp infos" data-infos="16">
-            <div>TIME</div>
+            <div>TIME MS</div>
         </div>
         <div class="controls">
             <svg class="knob" id="cc-16"></svg>
@@ -73,46 +73,31 @@
 <div class="mg-border-right mg-row-border-top controls-row"></div>
 
 <div class="mg-border-left controls-row"></div>
-
-    <!--
-        TEMPO
-    -->
-    <div id="tempo" class="grid-default controls-row pb-5">
-        <div class="header infos" data-infos="15">
-            <div id="tempo-label" title="">TEMPO</div>
-        </div>
-        <div class="controls">
-            <svg class="knob" id="cc-15"></svg>
-        </div>
-    </div>
-
     <!--
         Early mod
     -->
-    <div id="early-mod" class="grid-default controls-row">
+    <div id="early-mod" class="grid-default controls-row span-2 pb-10">
         <div class="header exp infos" data-infos="22">
-            <div>EARLY MOD</div>
+            <div>EARLY MODULATION</div>
         </div>
-<!--
-        <div id="cc-19-options" class="grid-4x4 controls-options-grid">
-            <div id="cc-23-0" class="bt">LP</div>
-            <div id="cc-23-1" class="bt">v. LP</div>
-            <div id="cc-23-2" class="bt">BP</div>
-            <div id="cc-23-3" class="bt">v. BP</div>
-            <div id="cc-23-4" class="bt">HP</div>
-            <div id="cc-23-5" class="bt">v. HP</div>
-            <div id="cc-23-6" class="bt">LP</div>
-            <div id="cc-23-7" class="bt">v. LP</div>
-            <div id="cc-23-7" class="bt">BP</div>
-            <div id="cc-23-9" class="bt">v. BP</div>
-            <div id="cc-23-10" class="bt">HP</div>
-            <div id="cc-23-11" class="bt">v. HP</div>
-            <div id="cc-23-12" class="bt">HP</div>
-            <div id="cc-23-13" class="bt">v. HP</div>
-            <div id="cc-23-14" class="bt">HP</div>
-            <div id="cc-23-15" class="bt">v. HP</div>
+        <div id="cc-22-options" class="grid-4x4 controls-options-grid">
+            <div id="cc-22-0" class="bt">OFF</div>
+            <div id="cc-22-72" class="bt">Slow &lt;&gt;</div>
+            <div id="cc-22-80" class="bt"><span class="tight">2⇩</span> <span class="tight">2⇧</span></div>
+            <div id="cc-22-88" class="bt"><span class="tight">8⇩</span> <span class="tight">♭3⇧</span></div>
+            <div id="cc-22-16" class="bt">Med &lt;&gt;</div>
+            <div id="cc-22-24" class="bt">Med &lt;-&gt;</div>
+            <div id="cc-22-96" class="bt"><span class="tight">5⇩</span> <span class="tight">4⇧</span></div>
+            <div id="cc-22-13" class="bt"><span class="tight">8⇩</span> <span class="tight">5⇧</span></div>
+            <div id="cc-22-32" class="bt">Fast &lt;-&gt;</div>
+            <div id="cc-22-40" class="bt">Fast &lt;--&gt;</div>
+            <div id="cc-22-112" class="bt"><span class="tight">5⇩</span> <span class="tight">8⇧</span></div>
+            <div id="cc-22-120" class="bt"><span class="tight">8⇩</span> <span class="tight">8⇧</span></div>
+            <div id="cc-22-48" class="bt">FM24</div>
+            <div id="cc-22-56" class="bt">FM48</div>
+            <div id="cc-22-64" class="bt">FM96</div>
+            <div id="cc-22-104" class="bt">≋ <span class="tight">4⇧</span></div>
         </div>
--->
     </div>
     <!--
 
@@ -128,21 +113,82 @@
     <!--
         LATE MOD
     -->
-    <div id="late-mod" class="grid-default controls-row">
+    <div id="late-mod" class="grid-default controls-row span-2">
         <div class="header exp infos" data-infos="25">
-            <div>LATE MOD</div>
+            <div>LATE MODULATION</div>
+        </div>
+        <div id="cc-25-options" class="grid-4x4 controls-options-grid pb-10">
+            <div id="cc-25-0" class="bt">OFF</div>
+            <div id="cc-25-72" class="bt">Slow &lt;&gt;</div>
+            <div id="cc-25-80" class="bt"><span class="tight">2⇩</span> <span class="tight">2⇧</span></div>
+            <div id="cc-25-88" class="bt"><span class="tight">8⇩</span> <span class="tight">♭3⇧</span></div>
+            <div id="cc-25-16" class="bt">Med &lt;&gt;</div>
+            <div id="cc-25-24" class="bt">Med &lt;-&gt;</div>
+            <div id="cc-25-96" class="bt"><span class="tight">5⇩</span> <span class="tight">4⇧</span></div>
+            <div id="cc-25-13" class="bt"><span class="tight">8⇩</span> <span class="tight">5⇧</span></div>
+            <div id="cc-25-32" class="bt">Fast &lt;-&gt;</div>
+            <div id="cc-25-40" class="bt">Fast &lt;--&gt;</div>
+            <div id="cc-25-112" class="bt"><span class="tight">5⇩</span> <span class="tight">8⇧</span></div>
+            <div id="cc-25-120" class="bt"><span class="tight">8⇩</span> <span class="tight">8⇧</span></div>
+            <div id="cc-25-48" class="bt">FM24</div>
+            <div id="cc-25-56" class="bt">FM48</div>
+            <div id="cc-25-64" class="bt">FM96</div>
+            <div id="cc-25-104" class="bt">≋ <span class="tight">4⇧</span></div>
         </div>
     </div>
+
+
     <!--
+        TEMPO
+    -->
+    <div id="tempo" class="grid-default controls-row pb-5">
+        <div class="header infos" data-infos="15">
+            <div id="tempo-label" title="">TEMPO MS</div>
+        </div>
+        <div class="controls">
+            <svg class="knob" id="cc-15"></svg>
+        </div>
+        <div id="cc-26-options" class="flex-row">
+<!--
+            <div id="cc-26-127" class="bt" style="width:30px;align:center">
+                <div style="width:20px;height:20px">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                         viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M63.576,2.553v68.904c-2.951-3.758-7.191-5.355-11.549-5.355c-2.909,0-5.869,0.713-8.53,1.972  c-7.562,3.579-13.265,11.895-8.912,21.012c2.802,5.926,8.009,8.363,13.397,8.363c2.9,0,5.858-0.707,8.518-1.959  c5.727-2.726,10.389-8.158,10.418-14.607h0.006V2.553H63.576z"/>
+                    </svg>
+                </div>
+            </div>
+-->
+            <div id="cc-9-127" class="bt" style="width:30px;text-align:center">
+                <div style="width:18px;height:18px">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                         viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                        <path d="M68.895,19.698C62.392,13.181,54.726,7.614,53.008,1.759v70.604c-4.907-6.32-13.438-6.597-20.097-3.447  c-7.548,3.572-13.24,11.873-8.896,20.976c4.305,9.102,14.293,9.963,21.877,6.393c5.893-2.801,10.658-8.477,10.395-15.178V24.743  c9.418,1.419,19.151,11.146,20.777,23.074C78.683,34.935,75.661,26.581,68.895,19.698z"/>
+                        <circle cx="75" cy="88.035" r="6"/>
+                    </svg>
+                </div>
+            </div>
+            <div id="cc-31-127" class="bt" style="width:75px;text-align:center">
+                ½ speed
+            </div>
+        </div>
+    </div>
+
+
+
+<!--
 
     -->
+<!--
     <div id="Xfilter-bandwidth" class="grid-default controls-row">
     </div>
+-->
     <!--
 
     -->
+<!--
     <div id="Xmodulation" class="grid-default controls-row">
     </div>
+-->
     <!--
         MIX
     -->
@@ -158,14 +204,38 @@
 
 <div class="mg-border-left mg-row-border-bottom pb-5"></div>
     <!--
+        FLANGER DEPTH
+    -->
+    <div id="flanger-mode" class="grid-default mg-last-row controls-row mg-row-border-bottom">
+        <div class="header infos" data-infos="21">
+            <div>FLANGER DEPTH</div>
+        </div>
+        <div class="controls">
+            <svg class="knob" id="cc-21"></svg>
+        </div>
+    </div>
+    <!--
+        FLANGER SPEED
+    -->
+    <div id="flanger-speed" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
+        <div class="header infos" data-infos="27">
+            <div>FLANGER SPEED</div>
+        </div>
+        <div class="controls">
+            <svg class="knob" id="cc-27"></svg>
+        </div>
+    </div>
+    <!--
         FLANGER MODE
     -->
     <div id="flanger-mode" class="grid-default mg-last-row controls-row mg-row-border-bottom">
         <div class="header infos" data-infos="26">
             <div>FLANGER MODE</div>
         </div>
-        <div class="controls">
-            <svg class="knob" id="cc-26"></svg>
+        <div id="cc-26-options" class="grid-3x1 controls-options-grid">
+            <div id="cc-26-0" class="bt">ENV DOWN</div>
+            <div id="cc-26-33" class="bt">ENV UP</div>
+            <div id="cc-26-127" class="bt">LFO</div>
         </div>
     </div>
     <!--
@@ -180,44 +250,26 @@
                 </div>
             </div>
     -->
-    <!--
-        FLANGER SPEED
-    -->
-    <div id="flanger-speed" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
-        <div class="header infos" data-infos="27">
-            <div>FLANGER SPEED</div>
-        </div>
-        <div class="controls">
-            <svg class="knob" id="cc-27"></svg>
-        </div>
-    </div>
-    <!--
-
-    -->
+<!--
     <div id="Xenv-type" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
         <div class="header infos" data-infos="9">
             <div></div>
         </div>
     </div>
+-->
     <!--
-
+        PHASER MODE
     -->
     <div id="Xsynth-mode" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
         <div class="header infos" data-infos="29">
-            <div></div>
+            <div>PHASER</div>
         </div>
-<!--
-        <div id="cc-29-options" class="synth-mode-grid controls-options-grid">
-            <div id="cc-29-0" class="bt">DRY</div>
-            <div id="cc-29-95" class="bt">ARP</div>
-            <div id="cc-29-63" class="bt">MONO</div>
-            <div id="cc-29-127" class="bt">POLY</div>
+        <div id="cc-29-options" class="grid-4x1 controls-options-grid pb-10">
+            <div id="cc-29-0" class="bt">OFF</div>
+            <div id="cc-29-63" class="bt">SLOW</div>
+            <div id="cc-29-95" class="bt">WHOLE NOTE</div>
+            <div id="cc-29-127" class="bt">1/4 NOTE</div>
         </div>
-        <div id="cc-30-options" class="synth-wave-grid controls-options-grid">
-            <div id="cc-30-0" class="bt">SAW</div>
-            <div id="cc-30-127" class="bt">SQUARE</div>
-        </div>
--->
     </div>
     <!--
         EXP
