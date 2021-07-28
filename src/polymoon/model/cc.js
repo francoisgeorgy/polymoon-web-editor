@@ -90,35 +90,35 @@ const _multiply = function (v) {
 };
 
 const _modulations = function (v) {
-    if (v <= 0x07) {                    // 1
+    if (v < 8) {                    // 1
         return "Off";
-    } else if (v <= 0x0f) {             // 2
+    } else if (v < 16) {             // 2
         return "Slow speed, shallow depth";
-    } else if (v <= 0x17) {             // 3
+    } else if (v < 24) {             // 3
         return "Medium speed, shallow depth";
-    } else if (v <= 0x1f) {             // 4
+    } else if (v < 32) {             // 4
         return "Medium speed, wide depth";
-    } else if (v <= 0x27) {             // 5
+    } else if (v < 40) {             // 5
         return "Fast speed, wide depth";
-    } else if (v <= 0x2f) {             // 6
+    } else if (v < 48) {             // 6
         return "Fast speed, exaggerated depth";
-    } else if (v <= 0x37) {             // 7
+    } else if (v < 56) {             // 7
         return "FM 24Hz";
-    } else if (v <= 0x3f) {             // 8
+    } else if (v < 64) {             // 8
         return "FM 48Hz";
-    } else if (v <= 0x47) {             // 9
+    } else if (v < 72) {             // 9
         return "FM 96Hz";
-    } else if (v <= 0x4f) {             // 10
+    } else if (v < 80) {             // 10
         return "Maj 2nd down + Maj 2nd up";
-    } else if (v <= 0x57) {             // 11
+    } else if (v < 88) {             // 11
         return "Oct down + Min 3rd up";
-    } else if (v <= 0x5f) {             // 12
+    } else if (v < 96) {             // 12
         return "Perf 5th down + Perf 4th up";
-    } else if (v <= 0x67) {             // 13
+    } else if (v < 104) {             // 13
         return "Tremolo mute + Perf 4th up";
-    } else if (v <= 0x6f) {             // 14
+    } else if (v < 112) {             // 14
         return "Oct down + Perf 5th up";
-    } else if (v <= 0x77) {             // 15
+    } else if (v < 120) {             // 15
         return "Perf 5th down + Oct up";
     } else {                            // 16
         return "Oct down + Oct up";
@@ -127,35 +127,35 @@ const _modulations = function (v) {
 
 // 0..127 value to predefined value
 const _map_modulations = function (v) {
-    if (v <= 0x07) {                    // 1
+    if (v < 8) {                    // 1
         return 0;
-    } else if (v <= 0x0f) {             // 2
+    } else if (v < 16) {             // 2
         return 8;
-    } else if (v <= 0x17) {             // 3
+    } else if (v < 24) {             // 3
         return 16;
-    } else if (v <= 0x1f) {             // 4
+    } else if (v < 32) {             // 4
         return 24;
-    } else if (v <= 0x27) {             // 5
+    } else if (v < 40) {             // 5
         return 32;
-    } else if (v <= 0x2f) {             // 6
+    } else if (v < 48) {             // 6
         return 40;
-    } else if (v <= 0x37) {             // 7
+    } else if (v < 56) {             // 7
         return 48;
-    } else if (v <= 0x3f) {             // 8
+    } else if (v < 64) {             // 8
         return 56;
-    } else if (v <= 0x47) {             // 9
+    } else if (v < 72) {             // 9
         return 64;
-    } else if (v <= 0x4f) {             // 10
+    } else if (v < 80) {             // 10
         return 72;
-    } else if (v <= 0x57) {             // 11
+    } else if (v < 88) {             // 11
         return 80;
-    } else if (v <= 0x5f) {             // 12
+    } else if (v < 96) {             // 12
         return 88;
-    } else if (v <= 0x67) {             // 13
+    } else if (v < 104) {             // 13
         return 96;
-    } else if (v <= 0x6f) {             // 14
+    } else if (v < 112) {             // 14
         return 104;
-    } else if (v <= 0x77) {             // 15
+    } else if (v < 120) {             // 15
         return 112;
     } else {                            // 16
         return 120;
