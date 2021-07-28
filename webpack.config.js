@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WebpackAutoInject = require("webpack-auto-inject-version");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {InjectManifest} = require('workbox-webpack-plugin');
 const path = require('path');
 
 
@@ -72,6 +73,9 @@ module.exports = {
             {from: "./public/img/favicon-32x32.png"},
             {from: "./public/img/favicon-96x96.png"}
         ]}),
+        new InjectManifest({
+            swSrc: './src/workboxSetup.js',
+        }),
         new HtmlWebpackPlugin({
             chunks: ["app_bundle"],
             hash: true,
