@@ -19,7 +19,7 @@ export const control_id = {
     flanger_speed: 27,      // ALT / 2nd layer
     tap: 28,
     phaser_mode: 29,
-    flanger_fb: 30,
+    flanger_fb: 30,         // ALT / 2nd layer ???
     half_speed: 31
 };
 
