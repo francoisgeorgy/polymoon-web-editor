@@ -6,24 +6,6 @@
     justify-self: left;
 }
 
-.synth-mode-grid {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-}
-
-.synth-wave-grid {
-    margin-top: 5px;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-}
-
-.synth-mode-grid .bt:nth-child(2n+1),
-.synth-wave-grid .bt:nth-child(2n+1) {
-    margin-right: 0;
-}
-
 #tempo-label {
     cursor: pointer;
 }
@@ -32,4 +14,8 @@
 #cc-29-options {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.globals-grid-custom {
+    grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto!important;
 }

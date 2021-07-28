@@ -1,11 +1,14 @@
 
+//TODO: check if trail and glide share the same byte in sysex
+
 export const global_id = {
-    input_mode: 0,
-    input_level: 1,
-    relay_bypass: 2,
-    kill_dry: 3,
-    trails: 4,
-    tempo_select: 5
+    input_mode: 0,      // mono / stereo
+    input_level: 1,     // instrument / line
+    relay_bypass: 2,    // buffered / relay
+    kill_dry: 3,        // dry active / dry muted
+    trails: 4,          // trail & glide
+    tempo_select: 5,    // global / preset
+    // glide: 6
 };
 
 export const global_conf = new Array(6);
@@ -54,6 +57,13 @@ function defineGlobals() {
             mask: [0x7F]
         }
     };
+    // global_conf[global_id.glide] = {
+    //     name: "",
+    //     sysex: {
+    //         offset: 18,     //FIXME: check offset in sysex dump
+    //         mask: [0x7F]
+    //     }
+    // };
 
     // add the missing default properties
     global_conf.forEach(function (obj) {
