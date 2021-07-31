@@ -120,7 +120,7 @@ const _modulations = function (v) {
         return "Oct down + Perf 5th up";
     } else if (v < 120) {             // 15
         return "Perf 5th down + Oct up";
-    } else {                            // 16
+    } else {                          // 16
         return "Oct down + Oct up";
     }
 };

@@ -46,8 +46,9 @@ export function setMidiInput2Port(port) {
     }
 }
 
-const monitors = new Array(127);
+// const monitors = new Array(127);
 
+/*
 function monitorCC(control_number) {
     if (!MODEL.control[control_number]) return;
     clearTimeout(monitors[control_number]);
@@ -56,6 +57,7 @@ function monitorCC(control_number) {
         log(`monitor receive CC ${control_number} = ${v}`);
     }, 200)
 }
+*/
 
 /**
  * Handle Program Change messages
@@ -108,7 +110,7 @@ export function handleCC(msg, input_num = 1) {
     log(`handleCC input ${input_num}`, cc, v);
 
     showMidiInActivity(input_num);
-    monitorCC(cc);
+    // monitorCC(cc);
 
     updateModelAndUI("cc", cc, v);
 

@@ -32,7 +32,7 @@ export function setMidiOutputPort(port) {
 
 
 // const previous_values = new Array(127);
-const monitors = new Array(127);
+// const monitors = new Array(127);
 
 /*
 function updatePreviousValues() {
@@ -44,6 +44,7 @@ function updatePreviousValues() {
 }
 */
 
+/*
 function monitorCC(control_number) {
     clearTimeout(monitors[control_number]);
     monitors[control_number] = setTimeout(() => {
@@ -51,6 +52,7 @@ function monitorCC(control_number) {
         log(`monitor send CC ${control_number} = ${v}`);
     }, 200)
 }
+*/
 
 
 let last_send_time = performance.now();     // for echo suppression
@@ -64,9 +66,10 @@ export function getLastSendTime() {
  * @param control
  * @param monitor
  */
-export function sendCC(control, monitor = true) {
+// export function sendCC(control, monitor = true) {
+export function sendCC(control) {
 
-    if (monitor) monitorCC(control.cc_number);   // TODO: check that control exists
+    // if (monitor) monitorCC(control.cc_number);   // TODO: check that control exists
 
     // If we edit the EXP value then we send value2
 

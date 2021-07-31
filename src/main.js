@@ -29,7 +29,7 @@ import "./shared/css/global-settings.css";
 //==================================================================================================================
 // Setup the worker for the offline support (PWA):
 
-if ("serviceWorker" in navigator) {
+if (false && "serviceWorker" in navigator) {
     window.addEventListener("load", function() {
         navigator.serviceWorker
             .register(

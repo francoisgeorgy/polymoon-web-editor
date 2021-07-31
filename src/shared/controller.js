@@ -141,7 +141,9 @@ export function updateModelAndUI(control_type, control_number, value) {
         MODEL.setControlValue(control_type, num, value);
 
         // update the UI:
-        updateControl(control_type, num, value);
+        // updateControl(control_type, num, value);
+        const c = MODEL.control[num];
+        updateControl(control_type, num, MODEL.getControlValue(c), MODEL.getMappedControlValue(c));
 
         if (num === MODEL.control_id.exp_pedal) {
             MODEL.interpolateExpValues(value);
@@ -154,4 +156,5 @@ export function updateModelAndUI(control_type, control_number, value) {
     } else {
         log(`the MODEL does not support this control: ${num}`)
     }
+
 }
