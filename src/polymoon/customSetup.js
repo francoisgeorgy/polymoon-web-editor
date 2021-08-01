@@ -15,6 +15,10 @@ function dotted8thActive() {
     return $("#toggle-dotted-8th").is(".on");
 }
 
+function negFeedbackActive() {
+    return $("#toggle-neg-feedback").is(".on");
+}
+
 function toggleHalfSpeed() {
     // log("toggleHalfSpeed", MODEL.control_id.half_speed);
     if (halfSpeedActive()) {
@@ -34,6 +38,17 @@ function toggleDotted8th() {
     } else {
         updateDevice("cc", MODEL.control_id.dotted_8th, 127);
         $("#toggle-dotted-8th").addClass("on");
+    }
+}
+
+function toggleNegFeedback() {
+    // log("toggleNegFeedback", MODEL.control_id.half_speed);
+    if (negFeedbackActive()) {
+        updateDevice("cc", MODEL.control_id.flanger_fb, 0);
+        $("#toggle-neg-feedback").removeClass("on");
+    } else {
+        updateDevice("cc", MODEL.control_id.flanger_fb, 127);
+        $("#toggle-neg-feedback").addClass("on");
     }
 }
 
@@ -57,6 +72,7 @@ export function customSetup() {
 
     $('#toggle-half-speed').click(toggleHalfSpeed);
     $('#toggle-dotted-8th').click(toggleDotted8th);
+    $('#toggle-neg-feedback').click(toggleNegFeedback);
 
     if (TRACE) console.groupEnd();
 }
