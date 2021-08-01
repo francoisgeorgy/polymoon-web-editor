@@ -23,6 +23,10 @@ export const control_id = {
     half_speed: 31
 };
 
+const _time_ms = function (v) {
+    return Math.round(v / 127 * 120) * 10;
+};
+
 const _delay_level = function (v) {
     if (v === 0) {
         return "auto";
@@ -205,7 +209,7 @@ export function defineControls() {
     };
     control[control_id.time] = { // 16,
         name: "Time",
-        human: _ms,
+        human: _time_ms,
         init_value: 76,
         cc_center: [63, 64],
         sysex: {
