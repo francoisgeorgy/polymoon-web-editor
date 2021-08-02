@@ -10,12 +10,22 @@
     cursor: pointer;
 }
 
+/*
 #cc-26-options,
 #cc-29-options {
     padding-left: 20px;
     padding-right: 20px;
 }
+*/
 
 .globals-grid-custom {
     grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto!important;
+}
+
+
+div.exp_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-content: stretch;
 }

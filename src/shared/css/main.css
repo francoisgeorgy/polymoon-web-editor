@@ -39,7 +39,7 @@ a {
 
 .grid-2x1 {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     justify-items: center;
 }
@@ -50,19 +50,19 @@ a {
 
 .grid-3x1 {
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
 }
 
 .grid-4x1 {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
 }
 
 .grid-3x2 {
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -72,19 +72,19 @@ a {
 
 .grid-4x4 {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /*grid-template-columns: repeat(4, 75px);*/
     justify-content: stretch;
-    margin-left: 10px;
-    margin-right: 10px;
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
 }
 
 /*
 .grid-3x3 {
     display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 */
 
@@ -149,6 +149,11 @@ a {
 }
 
 .mr-10 {
+    margin-right: 10px;
+}
+
+.mx-10 {
+    margin-left: 10px;
     margin-right: 10px;
 }
 

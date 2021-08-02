@@ -2,9 +2,9 @@
     <!--
         TIME
     -->
-    <div id="time" class="grid-default mg-row-border-top controls-row">
+    <div id="time" class="cell grid-default mg-row-border-top controls-row">
         <div class="header exp infos" data-infos="16">
-            <div>TIME MS</div>
+            <div>TIME <span style="text-transform:lowercase">[ms]</span></div>
         </div>
         <div class="controls">
             <svg class="knob" id="cc-16"></svg>
@@ -13,21 +13,15 @@
     <!--
         TEMPO
     -->
-    <div class="grid-default mg-row-border-top controls-row">
+    <div class="cell grid-default mg-row-border-top controls-row">
         <div class="header infos" data-infos="15">
-            <div id="tempo-label" title="click to toggle between ms and bpm">TEMPO</div>
+            <div id="tempo-label" title="">TEMPO</div>
         </div>
-        <div class="grid-2x1 Xflex-row Xspace-between Xpx-20 controls-options-grid">
-            <!--
-                        <div id="cc-26-127" class="bt" style="width:30px;align:center">
-                            <div style="width:20px;height:20px">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
-                                     viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M63.576,2.553v68.904c-2.951-3.758-7.191-5.355-11.549-5.355c-2.909,0-5.869,0.713-8.53,1.972  c-7.562,3.579-13.265,11.895-8.912,21.012c2.802,5.926,8.009,8.363,13.397,8.363c2.9,0,5.858-0.707,8.518-1.959  c5.727-2.726,10.389-8.158,10.418-14.607h0.006V2.553H63.576z"/>
-                                </svg>
-                            </div>
-                        </div>
-            -->
-            <div id="toggle-dotted-8th" class="tgl" style="width:75px;display:flex;justify-content:center">
+        <div class="grid-3x1 controls-options-grid" style="padding-left:16%;padding-right:16%">
+            <div style="text-align:center;padding-top:5px">
+                123 BPM
+            </div>
+            <div id="toggle-dotted-8th" class="tgl" style="display:flex;justify-content:center">
                 <div style="width:18px;height:18px">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                          viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
@@ -36,11 +30,11 @@
                     </svg>
                 </div>
             </div>
-            <div class="ml-10">
-                <div id="toggle-half-speed" class="tgl" style="width:75px;text-align:center">
+<!--            <div class="">-->
+                <div id="toggle-half-speed" class="tgl" style="text-align:center">
                     ½ speed
                 </div>
-            </div>
+<!--            </div>-->
         </div>
 <!--
         <div>
@@ -51,7 +45,7 @@
     <!--
         MULTIPLY
     -->
-    <div id="multiply" class="grid-default mg-row-border-top controls-row">
+    <div id="multiply" class="cell grid-default mg-row-border-top controls-row">
         <div class="header exp infos" data-infos="19">
             <div>MULTIPLY</div>
         </div>
@@ -67,7 +61,7 @@
     <!--
         FEEDBACK
     -->
-    <div id="feedback" class="grid-default mg-row-border-top controls-row">
+    <div id="feedback" class="cell grid-default mg-row-border-top controls-row">
         <div class="header exp infos" data-infos="17">
             <div>FEEDBACK</div>
         </div>
@@ -78,7 +72,7 @@
     <!--
         FEEDBACK FILTER
     -->
-    <div id="feedback-filter" class="grid-default mg-row-border-top controls-row">
+    <div id="feedback-filter" class="cell grid-default mg-row-border-top controls-row">
         <div class="header exp infos" data-infos="23">
             <div>FEEDBACK FILTER</div>
         </div>
@@ -89,7 +83,7 @@
     <!--
         DIMENSION
     -->
-    <div id="dimension" class="grid-default mg-row-border-top controls-row">
+    <div id="dimension" class="cell grid-default mg-row-border-top controls-row">
         <div class="header exp infos" data-infos="20">
             <div>DIMENSION</div>
         </div>
@@ -101,9 +95,9 @@
 
 <div class="mg-border-left controls-row"></div>
     <!--
-        Early mod
+        EARLY MOD
     -->
-    <div id="early-mod" class="grid-default controls-row span-2 pb-10">
+    <div id="early-mod" class="cell grid-default controls-row span-2">
         <div class="header exp infos" data-infos="22">
             <div>EARLY MODULATION</div>
         </div>
@@ -129,11 +123,11 @@
     <!--
         LATE MOD
     -->
-    <div id="late-mod" class="grid-default controls-row span-2">
+    <div id="late-mod" class="cell grid-default controls-row span-2">
         <div class="header exp infos" data-infos="25">
             <div>LATE MODULATION</div>
         </div>
-        <div id="cc-25-options" class="grid-4x4 controls-options-grid pb-10">
+        <div id="cc-25-options" class="grid-4x4 controls-options-grid">
             <div id="cc-25-0" class="bt">OFF</div>
             <div id="cc-25-72" class="bt">Slow &lt;&gt;</div>
             <div id="cc-25-80" class="bt flex-row space-between"><span class="tight ml-10">2↓</span><span class="tight mr-10">2↑</span></div>
@@ -167,18 +161,18 @@
         </div>
     </div>
 -->
-<div id="delay-level" class="grid-default mg-row-border-top controls-row">
-    <div class="header exp infos" data-infos="24">
-        <div>DELAY LEVEL</div>
+    <div id="delay-level" class="cell grid-default mg-row-border-top controls-row">
+        <div class="header exp infos" data-infos="24">
+            <div>DELAY LEVEL</div>
+        </div>
+        <div class="controls">
+            <svg class="knob" id="cc-24"></svg>
+        </div>
     </div>
-    <div class="controls">
-        <svg class="knob" id="cc-24"></svg>
-    </div>
-</div>
     <!--
         MIX
     -->
-    <div id="mix" class="grid-default controls-row">
+    <div id="mix" class="cell grid-default controls-row">
         <div class="header exp infos" data-infos="18">
             <div>MIX</div>
         </div>
@@ -192,7 +186,7 @@
     <!--
         FLANGER DEPTH
     -->
-    <div id="flanger-mode" class="grid-default mg-last-row controls-row mg-row-border-bottom">
+    <div id="flanger-mode" class="cell grid-default mg-last-row controls-row mg-row-border-bottom">
         <div class="header exp infos" data-infos="21">
             <div>FLANGERS DEPTH</div>
         </div>
@@ -203,7 +197,7 @@
     <!--
         FLANGER SPEED
     -->
-    <div id="flanger-speed" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
+    <div id="flanger-speed" class="cell grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
         <div class="header exp infos" data-infos="27">
             <div>FLANGERS SPEED</div>
         </div>
@@ -214,7 +208,7 @@
     <!--
         FLANGER MODE
     -->
-    <div id="flanger-mode" class="grid-default mg-last-row controls-row mg-row-border-bottom">
+    <div id="flanger-mode" class="cell grid-default mg-last-row controls-row mg-row-border-bottom">
         <div class="header exp infos" data-infos="26">
             <div>FLANGERS MODE</div>
         </div>
@@ -227,7 +221,7 @@
         <div id="toggle-neg-feedback" class="tgl" style="width:75px;text-align:center">
             + NEG FB
 -->
-            <div id="toggle-neg-feedback" class="tgl">+ NEG FB</div>
+            <div id="toggle-neg-feedback" class="tgl">+NEG FEEDBACK</div>
         </div>
 <!--
         <div id="cc-30-options" class="Xgrid-4x1 controls-options-grid">
@@ -238,7 +232,7 @@
     <!--
         PHASER MODE
     -->
-    <div id="phaser-mode" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
+    <div id="phaser-mode" class="cell grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
         <div class="header infos" data-infos="29">
             <div>PHASERS</div>
         </div>
@@ -252,7 +246,7 @@
     <!--
         EXP
     -->
-    <div id="exp-controler" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
+    <div id="exp-controler" class="cell grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
         <div class="header exp infos" data-infos="4">
             <div>EXP</div>
         </div>
@@ -270,7 +264,7 @@
     <!--
         BYPASS
     -->
-    <div id="bypass" class="grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
+    <div id="bypass" class="cell grid-default mg-last-row mg-row-border-bottom controls-row pb-5">
         <div class="header infos" data-infos="14">
             <div class="header-shortcut hidden">[SPACE]</div>
             <div>bypass</div>
