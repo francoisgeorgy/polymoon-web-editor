@@ -200,7 +200,7 @@ export function defineControls() {
     control[control_id.tempo] = { // 15,
         name: "Tempo",
         human: _tempo_ms,
-        init_value: 76,
+        init_value: 50,
         sysex: {
             offset: 25,
             mask: [0x7F]
@@ -210,7 +210,7 @@ export function defineControls() {
     control[control_id.time] = { // 16,
         name: "Time",
         human: _time_ms,
-        init_value: 76,
+        init_value: 53,
         cc_center: [63, 64],
         sysex: {
             offset: 9,
@@ -224,7 +224,7 @@ export function defineControls() {
     };
     control[control_id.feedback] = { // 17,
         name: "Feedback",
-        init_value: 101,
+        init_value: 63,
         human: _percent,
         sysex: {
             offset: 10,
@@ -238,7 +238,7 @@ export function defineControls() {
     };
     control[control_id.mix] = { // 18,
         name: "Mix",
-        init_value: 93,
+        init_value: 63,
         human: _percent,
         sysex: {
             offset: 11,
@@ -266,6 +266,7 @@ export function defineControls() {
     };
     control[control_id.dimension] = { // 20,
         name: "Dimension",
+        human: _percent,
         init_value: 0,
         sysex: {
             offset: 13,
@@ -294,7 +295,7 @@ export function defineControls() {
     control[control_id.early_mod] = { // 22,
         name: "Early modulations",
         human: _modulations,
-        init_value: 5,
+        init_value: 0,
         map_raw: _map_modulations,
         sysex: {
             offset: 15,
@@ -310,7 +311,7 @@ export function defineControls() {
         name: "Feedback filter",
         human: _percent,
         //TODO: map_raw
-        init_value: 63,
+        init_value: 0,
         sysex: {
             offset: 16,
             mask: [0x7F]
@@ -325,7 +326,7 @@ export function defineControls() {
         name: "Delay level",
         human: _delay_level,
         //TODO: auto-scaling when 0
-        init_value: 0,
+        init_value: 63,
         sysex: {
             offset: 17,
             mask: [0x7F]
@@ -340,7 +341,7 @@ export function defineControls() {
         name: "Late modulations",
         human: _modulations,
         map_raw: _map_modulations,
-        init_value: 4,
+        init_value: 0,
         sysex: {
             offset: 18,
             mask: [0x7F]
@@ -368,7 +369,7 @@ export function defineControls() {
     };
     control[control_id.flanger_speed] = { // 27,
         name: "Flanger speed",
-        init_value: 63,
+        init_value: 0,
         sysex: {
             offset: 20,
             mask: [0x7F]

@@ -32,6 +32,10 @@ export function tapDown(id) {
         const cc_value = Math.min(dt / 10, 127);
         updateDevice("cc", MODEL.control_id.tempo, cc_value);
         updateControl("cc", MODEL.control_id.tempo, cc_value);
+        const cc_time_value = Math.round(cc_value * 127 / 120);
+        log("cc_time_value", cc_time_value);
+        updateDevice("cc", MODEL.control_id.time, cc_time_value);
+        updateControl("cc", MODEL.control_id.time, cc_time_value);
     }
 }
 

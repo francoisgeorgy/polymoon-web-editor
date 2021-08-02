@@ -193,14 +193,14 @@ export function handleSysex(data) {
                 //     updateUrl();
                 // }
                 // setPresetClean();
-                appendMessage(`Preset ${MODEL.meta.preset_id.value} sysex received.`);
+                // appendMessage(`Preset ${MODEL.meta.preset_id.value} sysex received.`);
                 break;
             case SYSEX_GLOBALS:
                 updateGlobalSettings();
-                appendMessage(`Global config settings received.`);
+                // appendMessage(`Global config settings received.`);
                 break;
             default:
-                appendMessage(valid.message);
+                // appendMessage(valid.message);
         }
 
     }

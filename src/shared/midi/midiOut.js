@@ -12,6 +12,7 @@ import {inExpMode} from "@shared/expController";
 import {getMidiInputPort, suppressSysexEcho} from "@midi/midiIn";
 import {updateImportPresetsProgress} from "@shared/preset_library";
 import {updateControls} from "@shared/controller";
+import {customUpdateUI} from "@device/controller";
 
 const wait = ms => new Promise(r => setTimeout(r, ms));
 
@@ -118,6 +119,8 @@ export function updateDevice(control_type, control_number, value_float, in_exp_m
         updateExpSlider(value);
         updateControls(true);
     }
+
+    customUpdateUI(control_type, control_number);
 }
 
 // let fullUpdateRunning = false;

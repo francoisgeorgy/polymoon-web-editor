@@ -1,11 +1,12 @@
 import MODEL from "@model";
 import {updateControl} from "@shared/controller";
 import {TRACE} from "@shared/utils/debug";
-import {setupFootswitches} from "./footswitches";
+import {setupFootswitches, tapDown, tapRelease} from "./footswitches";
 import {_tempo_bpm, _tempo_ms} from "@model";
 import {expHeel, expToe, inExpMode, showExpValues} from "../shared/expController";
 import {updateDevice} from "../shared/midi/midiOut";
 import {log} from "../shared/utils/debug";
+import {updateTempoBPMText} from "@device/controller";
 
 function halfSpeedActive() {
     return $("#toggle-half-speed").is(".on");
@@ -52,23 +53,40 @@ function toggleNegFeedback() {
     }
 }
 
+function setupTapTempo() {
+
+    $("#tempo-bpm")
+        .mousedown(function () {
+            tapDown('cc-28');
+        })
+        .mouseup(function () {
+            tapRelease('cc-28');
+        });
+
+}
+
 export function customSetup() {
 
     if (TRACE) console.groupCollapsed("customSetupUI");
 
     setupFootswitches();
 
-    $('#tempo-label').click(() => {
-        const c = MODEL.control[MODEL.control_id.tempo];
-        if (c.human === _tempo_bpm) {
-            c.human = _tempo_ms;
-            $('#tempo-label').text('tempo MS');
-        } else {
-            c.human = _tempo_bpm;
-            $('#tempo-label').text('tempo BPM');
-        }
-        updateControl(c.cc_type, MODEL.control_id.tempo, MODEL.getControlValue(c), MODEL.getMappedControlValue(c));
-    });
+    setupTapTempo();
+
+    /*
+        $('#tempo-label').click(() => {
+            const c = MODEL.control[MODEL.control_id.tempo];
+            if (c.human === _tempo_bpm) {
+                c.human = _tempo_ms;
+                $('#tempo-label').text('tempo MS');
+            } else {
+                c.human = _tempo_bpm;
+                $('#tempo-label').text('tempo BPM');
+            }
+            updateControl(c.cc_type, MODEL.control_id.tempo, MODEL.getControlValue(c), MODEL.getMappedControlValue(c));
+        });
+    */
+    updateTempoBPMText();
 
     $('#toggle-half-speed').click(toggleHalfSpeed);
     $('#toggle-dotted-8th').click(toggleDotted8th);

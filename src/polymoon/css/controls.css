@@ -6,7 +6,12 @@
     justify-self: left;
 }
 
+/*
 #tempo-label {
+    cursor: pointer;
+}
+*/
+#tempo-bpm {
     cursor: pointer;
 }
 
