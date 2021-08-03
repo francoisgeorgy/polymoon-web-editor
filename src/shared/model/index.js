@@ -4,7 +4,6 @@ import {control_id, defineControls} from "@device/model/cc";
 import {global_conf, global_id} from "@device/model/global_conf";
 import {getPresetBytes, decodeSysex, validate} from "@model/sysex";
 import {getDataForGlobalConfig} from "@device/model/sysex";
-import {log} from "../utils/debug";
 
 export const CC_LEFT_FOOTSWITCH = 28;
 export const CC_RIGHT_FOOTSWITCH = 14;
@@ -89,22 +88,16 @@ export const supportsCC = function (control_number) {
  * return the updated control object
  */
 export const setControlValue = function () {
-
-    log("setControlValue", arguments);
-
     let c;
     if (arguments.length === 2) {
 
         // args are control_object and value
-
-        log("setControlValue with control-object and value");
 
         let value = arguments[1];
         const v = typeof value === "number" ? value : parseInt(value);
         c = arguments[0];
         if (c.hasOwnProperty("map_raw")) {
             c.raw_value = c.map_raw(v);
-            log(`mapped value is ${c.raw_value} (from ${v})`);
         } else {
             c.raw_value = v;
         }
@@ -112,13 +105,10 @@ export const setControlValue = function () {
 
         // args are control_type, control_number, value, and bool value2
 
-        log("setControlValue with control_type, control-object and value");
-
         let ca; // controls array
 
         if (arguments[0] === "cc") {                // [0] is control type
             ca = control;
-            log("setControlValue: control type is 'cc'");
         } else {
             console.error("setControlValue: invalid control_type", arguments);
             return null;
@@ -127,31 +117,17 @@ export const setControlValue = function () {
         if (ca[arguments[1]]) {                     // [1] is control number
 
             let value = arguments[2];               // [2] is control value
-
-            log("setControlValue: value is ", value);
-
             const v = typeof value === "number" ? value : parseInt(value);
             c = ca[arguments[1]];
 
             const set_value2 = c.two_values && (arguments.length > 3) && arguments[3];
 
-            log("setControlValue: set_value2 is", set_value2);
-
             if (c.hasOwnProperty("map_raw")) {
-
-                log("setControlValue: mapping", set_value2 ? "raw_value2" : "raw_value", c, v, c.map_raw(v));
-
                 c[set_value2 ? "raw_value2" : "raw_value"] = c.map_raw(v);
             } else {
                 c[set_value2 ? "raw_value2" : "raw_value"] = v;
             }
-
-            log("setControlValue: c is now", c);
-
         } else {
-
-            log("setControlValue: arg 1 unsupported", arguments[1]);
-
             console.error("setControlValue: unknown number", arguments);
             return null;
         }
