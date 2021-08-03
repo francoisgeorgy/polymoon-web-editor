@@ -1,7 +1,7 @@
 
 //TODO: check if trail and glide share the same byte in sysex
 
-export const global_id = {
+export const global_id = {  // Global Num (see Meris I/O doc)
     input_mode: 0,      // mono / stereo
     input_level: 1,     // instrument / line
     relay_bypass: 2,    // buffered / relay
@@ -16,42 +16,42 @@ export const global_conf = new Array(6);
 function defineGlobals() {
 
     global_conf[global_id.input_mode] = {
-        name: "",
+        name: "input_mode",
         sysex: {
             offset: 11,
             mask: [0x7F]
         }
     };
     global_conf[global_id.input_level] = {
-        name: "",
+        name: "input_level",
         sysex: {
             offset: 12,
             mask: [0x7F]
         }
     };
     global_conf[global_id.relay_bypass] = {
-        name: "",
+        name: "relay_bypass",
         sysex: {
             offset: 13,
             mask: [0x7F]
         }
     };
     global_conf[global_id.kill_dry] = {
-        name: "",
+        name: "kill_dry",
         sysex: {
             offset: 14,
             mask: [0x7F]
         }
     };
     global_conf[global_id.trails] = {
-        name: "",
+        name: "trails",
         sysex: {
             offset: 16,
             mask: [0x7F]
         }
     };
     global_conf[global_id.tempo_select] = {
-        name: "",
+        name: "tempo_select",
         sysex: {
             offset: 17,
             mask: [0x7F]
