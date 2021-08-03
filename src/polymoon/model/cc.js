@@ -93,6 +93,24 @@ const _multiply = function (v) {
     }
 };
 
+// 0..127 value to predefined value
+const _map_multiply = function (v) {
+    console.log("map_multiply", v);
+    if (v < 8) {
+        return 0;
+    } else if (v < 33) {
+        return 8;
+    } else if (v < 63) {
+        return 33;
+    } else if (v < 88) {
+        return 63;
+    } else if (v < 112) {
+        return 88;
+    } else {
+        return 112;
+    }
+};
+
 const _modulations = function (v) {
     if (v < 8) {                    // 1
         return "Off";
@@ -252,7 +270,8 @@ export function defineControls() {
     };
     control[control_id.multiply] = { // 19,
         name: "Multiply",
-        human: _multiply,       //TODO: map_raw
+        human: _multiply,
+        map_raw: _map_multiply,
         init_value: 0,
         sysex: {
             offset: 12,

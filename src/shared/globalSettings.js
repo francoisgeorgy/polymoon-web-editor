@@ -87,7 +87,6 @@ function showGlobalSetting(id, state) {
 export function updateGlobalSettings() {
     log("updateGlobalSettings()");
 
-    // const g = MODEL.global_conf[global_id.input_mode];
     showGlobalSetting(`${global_id.input_mode}`, MODEL.global_conf[global_id.input_mode].value);
     showGlobalSetting(`${global_id.input_level}`, MODEL.global_conf[global_id.input_level].value);
     showGlobalSetting(`${global_id.relay_bypass}`, MODEL.global_conf[global_id.relay_bypass].value);
@@ -100,27 +99,5 @@ export function updateGlobalSettings() {
     // GLIDE, bit 0:
     showGlobalSetting(`${global_id.trails}-b`, MODEL.global_conf[global_id.trails].value & 0x01);
 
-    /*
-    for (let i=0; i < MODEL.global_conf.length; i++) {
-
-        const g = MODEL.global_conf[i];
-
-        const wrapperId = `#global-${g.id}`;
-
-        let mask = $(wrapperId).attr("data-mask");
-        if (mask === undefined) {
-            mask = 0x7f;
-        }
-
-        log(`updateGlobalSettings: ${g.sysex.offset}: ${g.name}=${g.value} - (${mask})`);
-        if (g.value & mask) {
-            $(`${wrapperId} span.value-off`).addClass('hidden');
-            $(`${wrapperId} span.value-on`).removeClass('hidden');
-        } else {
-            $(`${wrapperId} span.value-off`).removeClass('hidden');
-            $(`${wrapperId} span.value-on`).addClass('hidden');
-        }
-    }
-*/
     log("updateGlobalSettings done");
 }

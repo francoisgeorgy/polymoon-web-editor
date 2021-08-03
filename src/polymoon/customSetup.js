@@ -8,6 +8,14 @@ import {updateDevice} from "../shared/midi/midiOut";
 import {log} from "../shared/utils/debug";
 import {updateTempoBPMText} from "@device/controller";
 
+export function setHalfSpeed() {
+    $("#toggle-half-speed").addClass("on");
+}
+
+export function clearHalfSpeed() {
+    $("#toggle-half-speed").removeClass("on");
+}
+
 function halfSpeedActive() {
     return $("#toggle-half-speed").is(".on");
 }
@@ -24,21 +32,31 @@ function toggleHalfSpeed() {
     // log("toggleHalfSpeed", MODEL.control_id.half_speed);
     if (halfSpeedActive()) {
         updateDevice("cc", MODEL.control_id.half_speed, 0);
-        $("#toggle-half-speed").removeClass("on");
+        // $("#toggle-half-speed").removeClass("on");
+        clearHalfSpeed();
     } else {
         updateDevice("cc", MODEL.control_id.half_speed, 127);
-        $("#toggle-half-speed").addClass("on");
+        // $("#toggle-half-speed").addClass("on");
+        setHalfSpeed();
     }
+}
+
+export function setDotted8th() {
+    $("#toggle-dotted-8th").addClass("on");
+}
+
+export function clearDotted8th() {
+    $("#toggle-dotted-8th").removeClass("on");
 }
 
 function toggleDotted8th() {
     // log("toggleDotted8th", MODEL.control_id.half_speed);
     if (dotted8thActive()) {
         updateDevice("cc", MODEL.control_id.dotted_8th, 0);
-        $("#toggle-dotted-8th").removeClass("on");
+        clearDotted8th();
     } else {
         updateDevice("cc", MODEL.control_id.dotted_8th, 127);
-        $("#toggle-dotted-8th").addClass("on");
+        setDotted8th();
     }
 }
 
