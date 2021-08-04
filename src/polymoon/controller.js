@@ -8,6 +8,7 @@ export function updateTempoBPMText() {
     const c = MODEL.control[MODEL.control_id.time];
     const time = Math.round(MODEL.getControlValue(c) / 127 * 120) * 10;
     const bpm = time > 0 ? Math.round(60000 / time) : 0;
+    // const bpm = time;
     $('#tempo-bpm').text(`${bpm} BPM`);
 }
 

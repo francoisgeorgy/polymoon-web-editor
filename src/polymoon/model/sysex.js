@@ -40,7 +40,8 @@ export function getDataForPreset() {
     data[i++] = control[control_id.flanger_speed].raw_value;
 
     // Non exp values
-    data[i++] = control[control_id.tap].raw_value;
+    data[i++] = control[control_id.bypass].raw_value;
+    data[i++] = 0   // control[control_id.tap].raw_value;  always 0 in sysex
     data[i++] = control[control_id.phaser_mode].raw_value;
     data[i++] = control[control_id.flanger_fb].raw_value;
     data[i++] = control[control_id.half_speed].raw_value;
