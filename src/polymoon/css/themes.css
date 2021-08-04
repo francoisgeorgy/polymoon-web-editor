@@ -38,15 +38,11 @@ html {
 
     --bt-color: #333;
     --bt-border: #333;
-    /*--bt-bg-color: rgba(255, 251, 177, 0.25);*/
     --bt-bg-color: rgba(200, 200, 200, 0.25);
     --bt-hover-color: #000;
-    /*--bt-hover-bg-color: #eafc71;*/
     --bt-hover-bg-color: #ffffff;
     --bt-on-color: #000;
-    /*--bt-on-bg-color: yellow;*/
     --bt-on-bg-color: #f1ffa4;
-    /*--bt-on-border: #f9d000;*/
     --bt-on-border: #444444;
 
     --sw-color: #a7a7a7;
@@ -70,7 +66,6 @@ html {
 
     --preset-sel-bg-color: #ff00001A;
     --preset-descr-bg-color: lightgoldenrodyellow;
-    /*--preset-selector-bg-color: rgba(255, 251, 177, 0.25);*/
     --preset-selector-bg-color: rgba(200, 200, 200, 0.25);
     --preset-editor-over-bg-color: white;
 
@@ -97,7 +92,6 @@ a {
 }
 
 #main-grid {
-    /*background-color: lightgoldenrodyellow;*/
     background-color: #ffffff;
     background-image: url("img/bg-logo-opacity5.png"), linear-gradient(to right, #aaaaaa, #fafafa 1%, #fafafa 99%, #aaaaaa);
     background-repeat: no-repeat;

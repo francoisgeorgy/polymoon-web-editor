@@ -90,9 +90,6 @@ module.exports = {
             inject: "head",
             template: "./src/print/print.html",
             filename: "./print.html" //relative to root of the application
-        // }),
-        // new ZipPlugin({
-        //     filename: 'polymoon_editor.zip',
         })
     ],
     performance: {

@@ -45,7 +45,7 @@ export function getDataForPreset() {
     data[i++] = control[control_id.flanger_fb].raw_value;
     data[i++] = control[control_id.half_speed].raw_value;
 
-    // // Toe Down values
+    // Toe Down values
     data[i++] = control[control_id.time].raw_value;
     data[i++] = control[control_id.feedback].raw_value;
     data[i++] = control[control_id.mix].raw_value;

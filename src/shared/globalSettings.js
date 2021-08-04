@@ -96,7 +96,7 @@ export function updateGlobalSettings() {
     // special case for global Trails because this global settings represents two values (trail, glide)
     // TRAIL, bit 1:
     showGlobalSetting(`${global_id.trails}`, MODEL.global_conf[global_id.trails].value & 0x02);  // the -b suffix is just to make the ID diff from the one above
-    // GLIDE, bit 0:
+    // TRAIL, bit 0:
     showGlobalSetting(`${global_id.trails}-b`, MODEL.global_conf[global_id.trails].value & 0x01);
 
     log("updateGlobalSettings done");
