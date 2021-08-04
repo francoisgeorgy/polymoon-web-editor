@@ -15,8 +15,16 @@ export const _0_100 = function (v) {
     return Math.floor(v / 127 * 100 + 0.5);
 };
 
+export const _1_128 = function (v) {
+    return v + 1;
+};
+
 export const _percent = function (v) {
     return Math.floor(v / 127 * 100 + 0.5) + '%';
+};
+
+export const _percent_neg_pos = function (v) {
+    return Math.floor((v - 63.5) / 127 * 100 + 0.5) + '%';
 };
 
 export const _off_when_zero_percent = function (v) {

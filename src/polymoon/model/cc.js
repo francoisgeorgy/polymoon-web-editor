@@ -1,4 +1,14 @@
-import {_0_100, _2_steps, _4_steps, _off_when_zero_percent, _percent, _ms, _tempo_ms, control} from "@model";
+import {
+    _0_100,
+    _2_steps,
+    _4_steps,
+    _off_when_zero_percent,
+    _percent,
+    _ms,
+    _tempo_ms,
+    control,
+    _percent_neg_pos, _1_128
+} from "@model";
 
 export const control_id = {
     exp_pedal: 4,
@@ -99,7 +109,7 @@ const _map_multiply = function (v) {
     if (v < 8) {
         return 0;
     } else if (v < 33) {
-        return 8;
+        return 9;
     } else if (v < 63) {
         return 33;
     } else if (v < 88) {
@@ -198,6 +208,7 @@ export function defineControls() {
         human: _dotted_8th,
         // map_raw: _2_steps,   //TODO: map_raw
         init_value: 0,
+        no_randomize: true,
         sysex: {
             offset: 22,
             mask: [0x7F]
@@ -219,6 +230,7 @@ export function defineControls() {
         name: "Tempo",
         human: _tempo_ms,
         init_value: 50,
+        no_randomize: true,
         sysex: {
             offset: 25,
             mask: [0x7F]
@@ -243,7 +255,7 @@ export function defineControls() {
     control[control_id.feedback] = { // 17,
         name: "Feedback",
         init_value: 63,
-        human: _percent,
+        human: _1_128,
         sysex: {
             offset: 10,
             mask: [0x7F]
@@ -328,9 +340,9 @@ export function defineControls() {
     };
     control[control_id.feedback_filter] = { // 23,
         name: "Feedback filter",
-        human: _percent,
+        human: _percent_neg_pos,
         //TODO: map_raw
-        init_value: 0,
+        init_value: 63,
         sysex: {
             offset: 16,
             mask: [0x7F]
@@ -434,6 +446,7 @@ export function defineControls() {
     control[control_id.half_speed] = { // 31
         name: "Half speed",
         init_value: 0,
+        no_randomize: true,
         // sysex: {
         //     offset: 25,
         //     mask: [0x7F]
