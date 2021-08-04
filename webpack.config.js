@@ -75,6 +75,7 @@ module.exports = {
         ]}),
         new InjectManifest({
             swSrc: './src/workboxSetup.js',
+            maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
         }),
         new HtmlWebpackPlugin({
             chunks: ["app_bundle"],
