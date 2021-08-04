@@ -12,9 +12,10 @@ html {
     --messages-border: #999;
 
     --value: #ffffff;
+    --dialog-bg-color: #eee;
     --dialog-link: #fff;
-    --dialog-bg-color: rgba(0, 0, 0, 0.80);
     --dialog-small-button-color: #333;
+    --lity-bg-color: rgba(0, 0, 0, 0.80);
     --panel-link: blue;
 
     --knob-back-border: #999;

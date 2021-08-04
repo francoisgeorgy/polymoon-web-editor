@@ -20,23 +20,12 @@ function halfSpeedActive() {
     return $("#toggle-half-speed").is(".on");
 }
 
-function dotted8thActive() {
-    return $("#toggle-dotted-8th").is(".on");
-}
-
-function negFeedbackActive() {
-    return $("#toggle-neg-feedback").is(".on");
-}
-
 function toggleHalfSpeed() {
-    // log("toggleHalfSpeed", MODEL.control_id.half_speed);
     if (halfSpeedActive()) {
         updateDevice("cc", MODEL.control_id.half_speed, 0);
-        // $("#toggle-half-speed").removeClass("on");
         clearHalfSpeed();
     } else {
         updateDevice("cc", MODEL.control_id.half_speed, 127);
-        // $("#toggle-half-speed").addClass("on");
         setHalfSpeed();
     }
 }
@@ -49,8 +38,11 @@ export function clearDotted8th() {
     $("#toggle-dotted-8th").removeClass("on");
 }
 
+function dotted8thActive() {
+    return $("#toggle-dotted-8th").is(".on");
+}
+
 function toggleDotted8th() {
-    // log("toggleDotted8th", MODEL.control_id.half_speed);
     if (dotted8thActive()) {
         updateDevice("cc", MODEL.control_id.dotted_8th, 0);
         clearDotted8th();
@@ -60,14 +52,25 @@ function toggleDotted8th() {
     }
 }
 
+export function setNegFeedback() {
+    $("#toggle-neg-feedback").addClass("on");
+}
+
+export function clearNegFeedback() {
+    $("#toggle-neg-feedback").removeClass("on");
+}
+
+function negFeedbackActive() {
+    return $("#toggle-neg-feedback").is(".on");
+}
+
 function toggleNegFeedback() {
-    // log("toggleNegFeedback", MODEL.control_id.half_speed);
     if (negFeedbackActive()) {
         updateDevice("cc", MODEL.control_id.flanger_fb, 0);
-        $("#toggle-neg-feedback").removeClass("on");
+        clearNegFeedback();
     } else {
         updateDevice("cc", MODEL.control_id.flanger_fb, 127);
-        $("#toggle-neg-feedback").addClass("on");
+        setNegFeedback();
     }
 }
 

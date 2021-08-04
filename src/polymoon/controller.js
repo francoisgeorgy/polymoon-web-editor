@@ -1,6 +1,7 @@
 import MODEL from "@model";
 import {log} from "@utils/debug";
 import {clearDotted8th, clearHalfSpeed, setDotted8th, setHalfSpeed} from "@device/customSetup";
+import {clearNegFeedback, setNegFeedback} from "./customSetup";
 
 export function updateTempoBPMText() {
     log("updateTempoBPMText");
@@ -13,8 +14,6 @@ export function updateTempoBPMText() {
 export function customUpdateUI(control_type, control_number) {
 
     log("customUpdateUI", control_type, control_number);
-
-    // update Tempo BPM when time changes
 
     if (control_number === MODEL.control_id.time || control_number === MODEL.control_id.tempo) {
         updateTempoBPMText();
@@ -35,6 +34,15 @@ export function customUpdateUI(control_type, control_number) {
             setDotted8th();
         } else {
             clearDotted8th();
+        }
+    }
+
+    if (control_number === MODEL.control_id.flanger_fb) {
+        const v = MODEL.getControlValue(MODEL.control[MODEL.control_id.flanger_fb]);
+        if (v) {
+            setNegFeedback();
+        } else {
+            clearNegFeedback();
         }
     }
 
