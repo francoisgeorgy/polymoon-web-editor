@@ -7,7 +7,7 @@ import {
     _ms,
     _tempo_ms,
     control,
-    _percent_neg_pos, _1_128
+    _bipolar_percent, _1_128, _bipolar
 } from "@model";
 
 export const control_id = {
@@ -103,21 +103,21 @@ const _multiply = function (v) {
     }
 };
 
-// 0..127 value to predefined value
+// 0..127 value to predefined value (that will be used when sending the CC)
 const _map_multiply = function (v) {
     console.log("map_multiply", v);
     if (v < 8) {
-        return 0;
+        return 0;           // 1
     } else if (v < 33) {
-        return 9;
+        return 32;          // 2
     } else if (v < 63) {
-        return 33;
+        return 62;          // 3
     } else if (v < 88) {
-        return 63;
-    } else if (v < 112) {
-        return 88;
+        return 87;          // 4
+    } else if (v < 116) {
+        return 115;         // 5
     } else {
-        return 112;
+        return 127;         // 6
     }
 };
 
@@ -255,7 +255,7 @@ export function defineControls() {
     control[control_id.feedback] = { // 17,
         name: "Feedback",
         init_value: 63,
-        human: _1_128,
+        // human: _1_128,
         sysex: {
             offset: 10,
             mask: [0x7F]
@@ -297,7 +297,7 @@ export function defineControls() {
     };
     control[control_id.dimension] = { // 20,
         name: "Dimension",
-        human: _percent,
+        // human: _percent,
         init_value: 0,
         sysex: {
             offset: 13,
@@ -340,7 +340,7 @@ export function defineControls() {
     };
     control[control_id.feedback_filter] = { // 23,
         name: "Feedback filter",
-        human: _percent_neg_pos,
+        human: _bipolar,
         //TODO: map_raw
         init_value: 63,
         sysex: {

@@ -23,7 +23,13 @@ export const _percent = function (v) {
     return Math.floor(v / 127 * 100 + 0.5) + '%';
 };
 
-export const _percent_neg_pos = function (v) {
+export const _bipolar = function (v) {
+    if (v === 64) return 0;
+    if (v < 64) return v - 63;
+    return v - 64;
+};
+
+export const _bipolar_percent = function (v) {
     return Math.floor((v - 63.5) / 127 * 100 + 0.5) + '%';
 };
 
