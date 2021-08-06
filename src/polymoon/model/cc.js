@@ -117,7 +117,6 @@ const _multiply = function (v) {
 
 // 0..127 value to predefined value (that will be used when sending the CC)
 const _map_multiply = function (v) {
-    console.log("map_multiply", v);
     if (v < 8) {
         return 0;           // 1
     } else if (v < 33) {

@@ -7510,9 +7510,9 @@ supports-color@^7.0.0, supports-color@^7.1.0:
     has-flag "^4.0.0"
 
 svg-knob@^1.11.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/svg-knob/-/svg-knob-1.14.0.tgz#12509ec3a24424a0f0ed7d43db28d5f7c8f8d24c"
-  integrity sha512-toJWkFT3pKjqypQeEUiM+zIa6H0L0u3vG2tz221/rWmPhP3FyQ9fIPmtUz6jdtXIR1dmhFHP+dG40vukMZod0w==
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/svg-knob/-/svg-knob-1.15.0.tgz#b5de513887ec714a44d14ad9b4d228a139be28da"
+  integrity sha512-HFimsb6e6qI6/mwlWHhlyhk78v7X4cuLsyK+meIr51YnvHtxd358ijsanV8eYf8CXhyKIsBqoKc4Ta6asCclwQ==
 
 svg-slider@^1.3.2:
   version "1.3.2"
