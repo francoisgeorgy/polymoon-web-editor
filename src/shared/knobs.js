@@ -39,6 +39,7 @@ export function setupKnobs(userActionCallback) {
             value_min: Math.min(...c.cc_range),
             value_max: Math.max(...c.cc_range),
             default_value: v,
+            font_size: 21,
             center_zero: Math.min(...c.range) < 0,
             center_value: c.hasOwnProperty("cc_center") ? c.cc_center : c.init_value,
             format: v => c.human(v)

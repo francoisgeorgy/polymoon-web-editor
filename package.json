@@ -41,7 +41,7 @@
         "mustache": "^4.0.1",
         "rxjs": "^6.6.2",
         "storejs": "^1.0.25",
-        "svg-knob": "^1.8.3",
+        "svg-knob": "^1.11.0",
         "svg-slider": "^1.3.2",
         "webmidi": "^2.5.1",
         "webpack-jquery-ui": "^2.0.1",

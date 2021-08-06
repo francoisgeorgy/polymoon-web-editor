@@ -46,6 +46,18 @@ const _delay_level = function (v) {
     }
 };
 
+export const _feedback = function (v) {
+    if (v < 1) return "0\none repeat";
+    if (v === 127) return "127\ninfinite";
+    return v;
+};
+
+export const _filter_feedback = function (v) {
+    if (v === 64 || v === 63) return "0\nno filter";
+    if (v < 63) return (v - 63) + "\ndark";
+    return (v - 64) + "\nbright";
+};
+
 const _flanger_mode = function (v) {
     if (v < 33) {
         return "Env Down";
@@ -255,7 +267,7 @@ export function defineControls() {
     control[control_id.feedback] = { // 17,
         name: "Feedback",
         init_value: 63,
-        // human: _1_128,
+        human: _feedback,
         sysex: {
             offset: 10,
             mask: [0x7F]
@@ -340,7 +352,7 @@ export function defineControls() {
     };
     control[control_id.feedback_filter] = { // 23,
         name: "Feedback filter",
-        human: _bipolar,
+        human: _filter_feedback,
         //TODO: map_raw
         init_value: 63,
         sysex: {
