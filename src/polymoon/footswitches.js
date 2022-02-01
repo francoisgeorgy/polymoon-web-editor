@@ -4,9 +4,9 @@ import {updateMomentaryFootswitch} from "@shared/switches";
 import {updateDevice} from "@shared/midi/midiOut";
 import {log} from "@utils/debug";
 
-export function updateLeftFootswitch(value) {
-    //nothing to do with Polymoon
-}
+// export function updateLeftFootswitch(value) {
+//     //nothing to do with Polymoon
+// }
 
 let tap_timestamp = 0;
 
@@ -28,7 +28,7 @@ export function tapDown(id) {
     tap_timestamp = t;
 
     if (dt < 5000) {    // if more than 5 sec, reset
-        const bpm = Math.round(60000 / dt);
+        // const bpm = Math.round(60000 / dt);
         const cc_value = Math.min(dt / 10, 127);
         updateDevice("cc", MODEL.control_id.tempo, cc_value);
         updateControl("cc", MODEL.control_id.tempo, cc_value);

@@ -13,7 +13,7 @@ export function setBits(target, value, mask, width = 8) {
 
     // console.log("setBits", target, value, b(value), b(mask));
 
-    // const rs = getRightShift(mask);
+    const rs = getRightShift(mask);
     // const msb_bit = (msb_byte >> k) & 0x01;
 
     const w = (1 << width) - 1;

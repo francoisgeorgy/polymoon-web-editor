@@ -4,10 +4,8 @@ import {
     _4_steps,
     _off_when_zero_percent,
     _percent,
-    _ms,
     _tempo_ms,
-    control,
-    _bipolar_percent, _1_128, _bipolar
+    control
 } from "@model";
 
 export const control_id = {

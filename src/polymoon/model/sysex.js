@@ -2,21 +2,8 @@ import {control_id} from "@device/model/cc";
 import {control} from "@model";
 import {GROUP_ID, MODEL_ID} from "@model/sysex";
 
-export const SYNTH_MODES = {
-    dry: 0,
-    mono: 63,
-    arp: 95,
-    poly: 127
-};
-
-export const WAVESHAPES = {
-    sawtooth: 0,
-    square: 127
-};
-
 /**
  * Create a SysEx dump data structure
- * @param complete If false do not include the sysex header and footer bytes nor the manufacturer ID
  * @returns {Uint8Array}
  */
 // export function getPreset(complete = true) {

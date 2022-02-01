@@ -1,11 +1,7 @@
 import MODEL from "@model";
-import {updateControl} from "@shared/controller";
 import {TRACE} from "@shared/utils/debug";
 import {setupFootswitches, tapDown, tapRelease} from "./footswitches";
-import {_tempo_bpm, _tempo_ms} from "@model";
-import {expHeel, expToe, inExpMode, showExpValues} from "../shared/expController";
-import {updateDevice} from "../shared/midi/midiOut";
-import {log} from "../shared/utils/debug";
+import {updateDevice} from "@midi/midiOut";
 import {updateTempoBPMText} from "@device/controller";
 
 export function setHalfSpeed() {
